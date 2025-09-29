@@ -1,0 +1,4 @@
+# How to use this using pip: pip install -r requirements.txt
+pytest
+urllib3
+scipy
