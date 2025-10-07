@@ -16,3 +16,6 @@ __pycache__/
 .env
 # ignore any .coverage files
 .coverage
+
+# ignore any mp3 files
+*.mp3
