@@ -19,15 +19,14 @@ Below one can find the first exercises for the Digital Signal Processing part of
 
 ```python
 import urllib.request
-from scipy.io import wavfile
+import librosa
 from IPython import display
 
-# OS independent *.wav download
-file_name = "2776.wav"  # Source: https://bigsoundbank.com/detail-2776-cockatiel-parakeet-8.html
-url = f"https://bigsoundbank.com/UPLOAD/wav/{file_name}"
+file_name = "2776.mp3"  # Source: https://bigsoundbank.com/detail-2776-cockatiel-parakeet-8.html
+url = f"https://bigsoundbank.com/UPLOAD/mp3/{file_name}"
 
 urllib.request.urlretrieve(url, file_name)
+sound_data, samplerate = librosa.load(file_name)  # sr=None keeps the original sample rate
 
-samplerate, sound_data = wavfile.read(file_name)
 display.display(display.Audio(data=sound_data, rate=samplerate))
 ```
